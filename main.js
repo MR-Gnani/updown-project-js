@@ -1,26 +1,17 @@
-// 랜덤번호 지정
-// 번호 입력 인풋, 버튼
-// 정답 : 정답입니다.
-// 랜덤번호 < 입력번호 : down
-// 랜덤번호 > 입력번호 : up
-// Reset : 게임이 리셋
-// 기회는 5번으로 한정 (5번이 지나면 버튼 클릭 disable)
-// 1~100범위 밖의 번호 입력시 알림. 기회 소모 x
-// 유저가 이미 입력한 숫자 재입력시 알림. 기회 소모 x
 
-
+    // 초기번호
     let num = 0;
-    let playButton = $(`#play-button`);
-    let userInput = $(`#user-input`);
-    let result = $(`#result`);
-    let resetButton = $(`#reset-button`);
     let chance = 5;
     let gameOver = false;
     let history = []
 
-    playButton.on("click", play);
-    resetButton.on("click", reset);
-
+    let userInput = $(`#user-input`);
+    let result = $(`#result`);
+    
+    // play, reset버튼 클릭시 함수 호출
+    $(`#play-button`).on("click", play);
+    $(`#reset-button`).on("click", reset);
+    
     // 랜덤번호 생성
     function randNum(){
         num = Math.floor(Math.random()*100)+1;
@@ -69,21 +60,15 @@
         // 이미지 변경
         if(chance==4){
             $("#main-img").attr("src","/images/chance4.png");
-            $("#main-img").css("width", "250px");  
-            $("#main-img").css("height", "250px");
         } else if(chance==3){
             $("#main-img").attr("src","/images/chance3.png");
-            $("#main-img").css("width", "250px");  
-            $("#main-img").css("height", "250px");
         } else if(chance==2){
             $("#main-img").attr("src","/images/chance2.png");
-            $("#main-img").css("width", "250px");  
-            $("#main-img").css("height", "250px");
         } else{
             $("#main-img").attr("src","/images/chance1.png");
-            $("#main-img").css("width", "250px");  
-            $("#main-img").css("height", "250px");
         }
+        $("#main-img").css("width", "250px");  
+        $("#main-img").css("height", "250px");
 
         // 기회가 소진되면 버튼 비활성화
         if(chance < 1) {
@@ -95,7 +80,7 @@
         }
 
         if(gameOver){
-            playButton.prop("disabled", true);
+            $(`#play-button`).prop("disabled", true);
         }
 
         // 인풋 필드 비워주기
