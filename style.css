@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1d1d1d 
+}
+
+#container {
+    width: 500px;
+    height: 500px;
+    background-color: #fff; /* 흰색 배경 */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 흰색 박스에 그림자 효과 */
+    text-align: center;
+}
+
+#result {
+    margin-bottom: 20px;
+}
+
+#user-input {
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    width: 93%;
+    padding: 7px;
+    margin: 10px;
+}
+
+#main-img {
+    width: 250px;
+    height: 250px;
+}
+
+#user-input input{
+    width: 70%;
+}
+
+#reset-button {
+    width: 60px;
+    padding: 10px;
+    background-color: #ec0c00; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#play-button {
+    width: 60px;
+    padding: 10px;
+    background-color: #4CAF50; /* 초록색 버튼 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
