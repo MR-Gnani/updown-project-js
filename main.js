@@ -3,7 +3,7 @@
     let num = 0;
     let chance = 5;
     let gameOver = false;
-    let history = []
+    let history = [];
 
     let userInput = $(`#user-input`);
     let result = $(`#result`);
@@ -22,7 +22,13 @@
     function reset(){
         userInput.val("");
         randNum();
+        chance = 5;
+        history = [];
+        $(`#chance`).text(`남은기회 : 5`)
+        $(`#play-button`).prop("disabled", false);
+        $("#main-img").attr("src","/images/poppy.png");
         result.text('결과');
+
     }
 
     function play(){
